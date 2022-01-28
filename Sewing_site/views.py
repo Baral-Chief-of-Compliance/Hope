@@ -7,6 +7,9 @@ def index(request):
 	return render (request, 'Sewing_site/home.html')
 
 
+def about(request):
+	return render (request, 'Sewing_site/about.html' )
+
 class PostsView(View):
 
 	def get(self, request):
