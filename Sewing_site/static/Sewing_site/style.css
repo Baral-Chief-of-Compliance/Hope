@@ -1,0 +1,13 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.img-master-class-preview  {
+  height : 200px;
+  width : 200px;
+  object-fit: cover;
+	object-position: 50% 50%;
+
+}

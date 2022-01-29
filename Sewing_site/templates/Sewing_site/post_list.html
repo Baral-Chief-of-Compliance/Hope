@@ -1,8 +1,13 @@
+{% extends 'Sewing_site/base.html' %}
+
+{% block content %}
+<p>Публикации</p>
 <p>
-  {% for post in post_list%}
-    {{post.name_of_post}}
+  {% for post in object_list %}
+    <a href="{{ post.get_absolute_url }}">{{post.name_of_post}}</a>
     {{post.date_of_post}}
-    {{post.text_of_post}}
+<!--{{post.text_of_post|safe}}-->
     <br>
   {% endfor %}
 </p>
+{% endblock %}

@@ -1,5 +1,7 @@
 from django.db import models
 from datetime import date
+from django.urls import reverse
+
 
 class Post(models.Model):
 	photo_of_preview_post = models.ImageField("Изображение заставки статьи", upload_to = 'photo_of_preview_post/' )
@@ -11,23 +13,28 @@ class Post(models.Model):
 	def __str__(self):
 		return self.name_of_post
 
+	def get_absolute_url(self):
+		return reverse("post-details", kwargs={"pk": self.id})
 
 	class Meta:
 		verbose_name = "Статья"
 		verbose_name_plural = "Статьи"
 
 
-class PostImage(models.Model):
-	post = models.ForeignKey(Post, verbose_name = "Статья", on_delete = models.CASCADE)
-	image_for_post = models.ImageField("Изображение к статье", upload_to = 'photo_for_post/')
-	title = models.CharField("Подпись к изображению", max_length=100, blank=True)
-	text_of_image = models.TextField("Текст к изображению", blank = True)
+class MasterClass(models.Model):
+	photo_of_preview_master_class = models.ImageField("Изображение заставки мастеркласс", upload_to = 'photo_of_preview_masterclass/')
+	date_of_master_class = models.DateField("Дата публикации", default = date.today)
+	title_of_master_class = models.CharField("Название мастер класса", max_length = 64)
+	text_of_master_class = models.TextField("Текст к изображению")
 
 
 	def __str__(self):
-		return self.title
+		return self.title_of_master_class
+
+	def get_absolute_url(self):
+		return reverse("master-class-detail", kwargs={"pk": self.id})
 
 
 	class Meta:
-		verbose_name = "Изображение"
-		verbose_name_plural = "Изображения"
+		verbose_name = "Мастер-класс"
+		verbose_name_plural = "Мастер-классы"
