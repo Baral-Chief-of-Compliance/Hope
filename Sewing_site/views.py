@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Post, MasterClass
 from django.views.generic import View, ListView, DetailView
+from django.db.models import Q
 
 
 def index(request):
@@ -30,3 +31,16 @@ class MasterClassView(ListView):
 class MasterClassDetails(DetailView):
 	model = MasterClass
 	template_name = "Sewing_site/master_class_detail.html"
+
+
+class Search(ListView):
+
+	template_name = "Sewing_site/search_results.html"
+
+	def get_queryset(self):
+		query = self.request.GET.get('q')
+		object_list = MasterClass.objects.filter(
+			Q(title_of_master_class__icontains=query)
+		)
+
+		return object_list

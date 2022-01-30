@@ -1,0 +1,13 @@
+{% extends 'Sewing_site/base.html' %}
+
+{% block content %}
+<p>Результаты поиска</p>
+{% for master_class in object_list  %}
+  <img src="{{ master_class.photo_of_preview_master_class.url }}" class="img-master-class-preview" alt="{{master_class.photo_of_preview_master_class}}">
+  <a href ="{{ master_class.get_absolute_url }}">{{master_class.title_of_master_class}}</a>
+  {{master_class.date_of_master_class}}
+  <br>
+{% empty %}
+  <p>По вашему запросу ничего не найдено</p>
+{% endfor %}
+{% endblock %}

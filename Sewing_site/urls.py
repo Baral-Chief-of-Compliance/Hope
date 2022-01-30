@@ -7,5 +7,6 @@ urlpatterns = [
     path('post-details/<int:pk>/', views.PostDetails.as_view(), name = "post-details"),
     path('about-us/', views.about, name = 'about'),
     path('master-class-list/', views.MasterClassView.as_view(), name = "master-class-list"),
-    path('master-class-details/<int:pk>/', views.MasterClassDetails.as_view(), name = "master-class-detail")
+    path('master-class-details/<int:pk>/', views.MasterClassDetails.as_view(), name = "master-class-detail"),
+    path('search/', views.Search.as_view(), name = 'search'),
 ]
