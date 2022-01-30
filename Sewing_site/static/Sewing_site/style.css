@@ -9,5 +9,232 @@
   width : 200px;
   object-fit: cover;
 	object-position: 50% 50%;
+}
+	a{
+		text-decoration: none;
+	}
+
+	header{
+		width: 100%;
+		/*background: #085486;*/
+		background: #FFFFF0;
+
+	}
+
+	.header__logo{
+		margin-top: 38px;
+	}
+
+	.text_header_logo{
+		text-transform: uppercase;
+		font-weight: 800;
+		font-size: 24px;
+		color:  #47473d;
+		margin-top: 70px;
+		margin-left: 0%;
+	}
+.logo{
+	display: flex;
+	flex-direction: row;
+  justify-content: center;
 
 }
+
+	nav{
+		margin-top: 56px;
+		margin-bottom: 20px ;
+		text-align: center;
+
+	}
+	.topnav a{
+		color: #e2d8ce;
+		text-align: center;
+		padding: 16px 16px;
+		font-size: 16px;
+		font-weight: bold;
+		background: #696969;
+	}
+	.topnav a:hover{
+		background: #de6d94;
+		transition: background 0.3s ease;
+	}
+
+	.topnav .icon{
+		display: none;
+	}
+
+
+
+
+	.text{
+		text-align: left;
+		padding: 5% 20% 5% 20%;
+		line-height: 1.5;
+		list-style-type: none;
+	}
+	.text_name{
+		padding: 2% 0% 2% 0%;
+	}
+
+	.container{
+		display:  flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 2%;
+	}
+	form{
+		position: relative;
+		width: 300px;
+		margin: 0 auto;
+	}
+	input{
+		width: 100%;
+		height: 42px;
+		padding-left: 10px;
+		border: 3px solid #7BA7AB;
+		border-radius: 5px;
+		outline: none;
+		background: #F9F0DA;
+		color: #9E9C9C;
+	}
+	 button.search{
+		position: absolute;
+		top: 0;
+		right: 1px;
+		height: 42px;
+		border: none;
+		background: #7BA7AB;
+		border-radius: 0 5px 5px 0;
+		cursor: pointer;
+	}
+	button.search:before{
+		content: "\f002";
+		font-family: FontAwesome;
+		font-size: 16px;
+		color: #F9F0DA;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+
+	html,body{
+		font-family: 'Open Sans', sans-serif;
+		height: 100%;
+	}
+	body{
+		background: #FFFFF0/*#fda600*/;
+	}
+
+	.wrapper{
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+	.content{
+		flex: 1 0 auto;
+
+	}
+.content-text{
+	line-height: 1.5;
+	border:2px solid #de6d94;
+	margin: 30px 34.5% 30px 34.5%;
+	border-radius: 5px;
+	padding: 20px;
+}
+	.footer{
+		flex: 0 0 auto;
+		color: #e2d8ce;
+		background: #696969/*#085486*/;
+		text-align: center;
+		padding: 20px 40px 80px;
+		margin-left: 34.5%;
+		margin-right: 34.5%;
+		font-weight: bold;
+	}
+
+	h1.name{
+		display: flex;
+		justify-content: center;
+		padding: 5%;
+
+	}
+	h2.name{
+		display: flex;
+		justify-content: center;
+		padding: 1%;
+
+	}
+	.for_picture{
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.search_bar{
+		margin-top: 56px;
+		margin-left: 11%;
+	}
+
+
+	@media screen and (max-width: 1400px){
+
+			.topnav a{
+				display: none;
+			}
+			.topnav a.icon{
+				float: right;
+				margin-top: -17px;
+				display: block;
+				font-size: 25px;
+			}
+			nav{
+				width: 100%;
+				margin-left: 2%;
+			}
+
+			.topnav.responsive{
+				position: relative;
+				top:  50px;
+				left: -200px;
+			}
+
+			header .topnav.responsive{
+				height: 340px;
+			}
+
+			.topnav.responsive a.icon{
+				position: absolute;
+				top: -50px;
+				right: -200px;
+			}
+			.topnav.responsive a{
+				float: none;
+				display: block;
+				text-align: left;
+			}
+			@media screen and (max-width: 850px){
+				.search_bar{
+					margin-left: 2%
+				}
+				form{
+
+					width: 250px;
+
+				}
+				button.search:before{
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+				.text_header_logo{
+					display: none;
+				}
+				.header__logo{
+					margin-left: 2%;
+				}
+
+
+			}
+
+
+		}

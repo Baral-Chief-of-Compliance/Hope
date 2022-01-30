@@ -1,13 +1,13 @@
 {% extends 'Sewing_site/base.html' %}
 
 {% block content %}
-<p>Публикации</p>
-<p>
+<div class = "content-text">
+<p>В голове у творческой личности идей очень и очень много. А еще больше их в закладках на рукодельных сайтах, записных книжках, фотоальбомах в памяти компьютера. И это предел? Конечно же, нет! Ведь каждый визит на рукодельные сайты и форумы - это накопление новой информации и новых идей.</p>
+</div>
   {% for post in object_list %}
     <a href="{{ post.get_absolute_url }}">{{post.name_of_post}}</a>
     {{post.date_of_post}}
 <!--{{post.text_of_post|safe}}-->
     <br>
   {% endfor %}
-</p>
 {% endblock %}

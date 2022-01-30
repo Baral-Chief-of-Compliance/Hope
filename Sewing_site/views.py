@@ -5,7 +5,9 @@ from django.db.models import Q
 
 
 def index(request):
-	return render (request, 'Sewing_site/home.html')
+	Post_list = Post.objects.all()
+	MasterClass_list = MasterClass.objects.all()
+	return render (request, 'Sewing_site/home.html', {'Post_list': Post_list[:3], 'MasterClass_list': MasterClass_list[:3]})
 
 
 def about(request):
