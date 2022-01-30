@@ -11,7 +11,14 @@
 Раздел "Мастер-классы" поможет неопытным мастерицам. На таких мастер-классах рукодельницы делятся опытом, показывают особенности пошива того или иного предмета. При этом каждое действие сопровождается подробной инструкцией и фотографиями. Удобно, не правда ли?<br><br>
 </p>
 {% for master_class in MasterClass_list %}
+<div class = "container">
+  <a href ="master-class-details/{{ master_class.id }}">
   <img src="{{ master_class.photo_of_preview_master_class.url }}" class="img-master-class-preview" alt="{{master_class.photo_of_preview_master_class}}">
+  <div class = "bottom-left">
+    {{master_class.title_of_master_class}}
+  </div>
+  </a>
+</div>
 {% endfor %}
 <br><br>
 В разделе "Публикации" вы сможете находится в курсе событий развитие нашего сайта, а также событий в мире вышивки<br><br>
