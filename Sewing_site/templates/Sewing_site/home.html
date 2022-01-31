@@ -1,5 +1,11 @@
 {% extends 'Sewing_site/base.html' %}
 
+
+{% block title %}
+КЛУБОК - сайт о шитье и рукоделии
+{% endblock %}
+
+
 {% block content%}
 <div class = "content-text">
 <p>Разновидностей хобби очень много. Кому-то нравятся экстремальные занятия спортом или подвижные танцы, а кому-то коллекционирование или рисование. А многим по душе рукоделие, которое позволяет смастерить своими руками вещи для себя, детей или домашнего уюта. Одним из видов рукоделия является кройка и шитье. Это очень выгодное, в основном женское, хобби. Без существенных вложений из лоскутов тканей можно сшить изысканную вещь, которая будет выглядеть модно и оригинально.<br><br>
@@ -10,20 +16,36 @@
 Такие занятия как, например, подшить брюки, скатерть, занавески или сшить простынь – не требует особых навыков и знаний раскроя и шитья, но вот пошив более серьезных вещей, например, сшить платье, мужскую рубашку или курточку, требует посещения специальных курсов или самообучения. Если раньше, чтобы научиться швейному мастерству требовались долгие годы, то сейчас одним из самых простых и доступных методов получения новых знаний в вопросах пошива и ремонта изделий, их декорирования, является общение на специализированных интернет сайтах.<br><br>
 Раздел "Мастер-классы" поможет неопытным мастерицам. На таких мастер-классах рукодельницы делятся опытом, показывают особенности пошива того или иного предмета. При этом каждое действие сопровождается подробной инструкцией и фотографиями. Удобно, не правда ли?<br><br>
 </p>
+<div class = "home-photo-position">
 {% for master_class in MasterClass_list %}
 <div class = "container">
-  <a href ="master-class-details/{{ master_class.id }}">
-  <img src="{{ master_class.photo_of_preview_master_class.url }}" class="img-master-class-preview" alt="{{master_class.photo_of_preview_master_class}}">
-  <div class = "bottom-left">
-    {{master_class.title_of_master_class}}
-  </div>
+  <a  href = "master-class-details/{{ master_class.id }}">
+  <img src="{{ master_class.photo_of_preview_master_class.url }}" class="home-img-master-class-preview" alt="{{master_class.title_of_master_class}}">
   </a>
+  <div class = "bottom-left">
+
+    {{ master_class.title_of_master_class }}
+
+  </div>
+
 </div>
 {% endfor %}
+</div>
 <br><br>
 В разделе "Публикации" вы сможете находится в курсе событий развитие нашего сайта, а также событий в мире вышивки<br><br>
+<div class = "home-photo-position">
 {% for post in Post_list %}
-  <img src="{{ post.photo_of_preview_post.url }}" class="img-master-class-preview" alt="{{master_class.photo_of_preview_master_class}}">
+<div class = "container">
+  <a  href = "post-details/{{ post.id }}">
+  <img src="{{ post.photo_of_preview_post.url }}" class="home-img-master-class-preview" alt="{{ post.name_of_post}}">
+  </a>
+  <div class = "bottom-left">
+
+    {{ post.name_of_post }}
+
+  </div>
+</div>
 {% endfor %}
+</div>
 {% endblock %}
 </div>

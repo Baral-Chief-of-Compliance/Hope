@@ -1,13 +1,27 @@
 {% extends 'Sewing_site/base.html' %}
 
+
+{% block title %}
+Публикации | КЛУБОК
+{% endblock %}
+
+
 {% block content %}
 <div class = "content-text">
 <p>В голове у творческой личности идей очень и очень много. А еще больше их в закладках на рукодельных сайтах, записных книжках, фотоальбомах в памяти компьютера. И это предел? Конечно же, нет! Ведь каждый визит на рукодельные сайты и форумы - это накопление новой информации и новых идей.</p>
 </div>
   {% for post in object_list %}
-    <a href="{{ post.get_absolute_url }}">{{post.name_of_post}}</a>
-    {{post.date_of_post}}
-<!--{{post.text_of_post|safe}}-->
-    <br>
+  <div class = "content-list">
+    <div class = "content-list-lable">
+      <a href="{{ post.get_absolute_url }}">{{post.name_of_post}}</a>
+      <span>{{post.date_of_post}}</span>
+    </div>
+    <div class = "line"></div>
+    <div class = "content-include">
+      <img src="{{ post.photo_of_preview_post.url }}" class="img-master-class-preview" alt="{{post.photo_of_preview_post}}">
+      <p>{{ post.text_of_post|safe|truncatechars:150 }}</p>
+    </div>
+
+    </div>
   {% endfor %}
 {% endblock %}

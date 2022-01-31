@@ -1,7 +1,17 @@
 {% extends 'Sewing_site/base.html' %}
 
+{% block title %}
+{{ object.title_of_master_class }}
+{% endblock %}
+
 
 {% block content %}
-<p>{{ object.title_of_master_class }}</p>
+<div class = "content-text-details">
+<h1>{{ object.title_of_master_class }}</h1>
+<div class = "line"></div>
+<span>Дата публикации:{{ object.date_of_master_class}}</span>
+<div class = "content-text-details-include">
 {{ object.text_of_master_class|safe}}
+</div>
+</div>
 {% endblock %}
